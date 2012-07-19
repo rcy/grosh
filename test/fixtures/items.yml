@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  store: MyString
+  date: 2012-07-18 22:38:01
+  code: MyString
+  quantity: 9.99
+  quantity_per: MyString
+  price: 9.99
+  price_per: MyString
+  description: MyString
+  total: 9.99
+  tax_code: MyString
+
+two:
+  store: MyString
+  date: 2012-07-18 22:38:01
+  code: MyString
+  quantity: 9.99
+  quantity_per: MyString
+  price: 9.99
+  price_per: MyString
+  description: MyString
+  total: 9.99
+  tax_code: MyString

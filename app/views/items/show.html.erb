@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Store:</b>
+  <%= @item.store %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @item.date %>
+</p>
+
+<p>
+  <b>Code:</b>
+  <%= @item.code %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%= @item.quantity %>
+</p>
+
+<p>
+  <b>Quantity per:</b>
+  <%= @item.quantity_per %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @item.price %>
+</p>
+
+<p>
+  <b>Price per:</b>
+  <%= @item.price_per %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @item.description %>
+</p>
+
+<p>
+  <b>Total:</b>
+  <%= @item.total %>
+</p>
+
+<p>
+  <b>Tax code:</b>
+  <%= @item.tax_code %>
+</p>
+
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>
