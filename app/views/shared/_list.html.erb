@@ -1,6 +1,4 @@
 <div class="row">
-  <div class="span1"><b>nothing</b></div>
-  <div class="span1"><b>id</b></div>
   <div class="span2"><b>Description</b></div>
   <div class="span1"><b>Code</b></div>
   <div class="span1"><b>Quantity</b></div>
@@ -11,24 +9,21 @@
 </div>
 
 <%= form_for(Item.new, :html => {:class => 'form-inline'}, :remote => true) do |f| %>
+<%= f.hidden_field :receipt_id, :value => @receipt.id, :class => 'span12' %>
 <div class="row">
-<div class="span1">nothing</div>
-<div class="span1"><%= f.hidden_field :receipt_id, :value => @receipt.id, :class => 'span12' %></div>
-<div class="span2"><%= f.text_field :description, :class => 'span12' %></div>
-<div class="span1"><%= f.text_field :code, :class => 'span12' %></div>
-<div class="span1"><%= f.text_field :quantity, :class => 'span12' %></div>
-<div class="span1"><%= f.text_field :quantity_per, :class => 'span12' %></div>
-<div class="span1"><%= f.text_field :total, :class => 'span12' %></div>
-<div class="span1"><%= f.text_field :tax_code, :class => 'span12' %></div>
-<div class="span1"><%= f.submit :value => "add" %></div>
+  <div class="span2"><%= f.text_field :description, :class => 'span12' %></div>
+  <div class="span1"><%= f.text_field :code, :class => 'span12' %></div>
+  <div class="span1"><%= f.text_field :quantity, :class => 'span12' %></div>
+  <div class="span1"><%= f.text_field :quantity_per, :class => 'span12' %></div>
+  <div class="span1"><%= f.text_field :total, :class => 'span12' %></div>
+  <div class="span1"><%= f.text_field :tax_code, :class => 'span12' %></div>
+  <div class="span1"><%= f.submit :value => "add" %></div>
 </div>
 <% end %>
 
 
 <% @items.each do |item| %>
   <div class="row">
-    <div class="span1">nothing</div>
-    <div class="span1"><%= item.id %></div>
     <div class="span2"><%= item.description %></div>
     <div class="span1"><%= item.code %></div>
     <div class="span1"><%= item.quantity %></div>
