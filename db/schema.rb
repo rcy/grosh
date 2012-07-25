@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120719053801) do
+ActiveRecord::Schema.define(:version => 20120725002149) do
 
   create_table "items", :force => true do |t|
     t.string   "store"
@@ -26,6 +26,14 @@ ActiveRecord::Schema.define(:version => 20120719053801) do
     t.string   "tax_code"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.integer  "receipt_id"
+  end
+
+  create_table "receipts", :force => true do |t|
+    t.string   "store"
+    t.datetime "date"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

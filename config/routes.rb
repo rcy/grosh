@@ -1,4 +1,6 @@
 Grosh::Application.routes.draw do
+  resources :receipts
+
   resources :items
 
   # The priority is based upon order of creation:
