@@ -1,32 +1,39 @@
-  <tr>
-    <th>Description</th>
-    <th>Code</th>
-    <th>Quantity</th>
-    <th>Units</th>
-    <th>Total</th>
-    <th>Tax code</th>
-  </tr>
+<div class="row">
+  <div class="span1"><b>nothing</b></div>
+  <div class="span1"><b>id</b></div>
+  <div class="span2"><b>Description</b></div>
+  <div class="span1"><b>Code</b></div>
+  <div class="span1"><b>Quantity</b></div>
+  <div class="span1"><b>Units</b></div>
+  <div class="span1"><b>Total</b></div>
+  <div class="span1"><b>Tax code</b></div>
+  <div class="span1"><b>buttons</b></div>
+</div>
 
-  <tr>
-<%= form_for(Item.new) do |f| %>
-    <td><%= f.text_field :description, :size => 8 %></td>
-    <td><%= f.text_field :code, :size => 8 %></td>
-    <td><%= f.text_field :quantity, :size => 8 %></td>
-    <td><%= f.text_field :quantity_per, :size => 8 %></td>
-    <td><%= f.text_field :total, :size => 8 %></td>
-    <td><%= f.text_field :tax_code, :size => 1 %></td>
-    <td><%= f.submit :value => "add" %></td>
+<%= form_for(Item.new, :html => {:class => 'form-inline'}, :remote => true) do |f| %>
+<div class="row">
+<div class="span1">nothing</div>
+<div class="span1"><%= f.hidden_field :receipt_id, :value => @receipt.id, :class => 'span12' %></div>
+<div class="span2"><%= f.text_field :description, :class => 'span12' %></div>
+<div class="span1"><%= f.text_field :code, :class => 'span12' %></div>
+<div class="span1"><%= f.text_field :quantity, :class => 'span12' %></div>
+<div class="span1"><%= f.text_field :quantity_per, :class => 'span12' %></div>
+<div class="span1"><%= f.text_field :total, :class => 'span12' %></div>
+<div class="span1"><%= f.text_field :tax_code, :class => 'span12' %></div>
+<div class="span1"><%= f.submit :value => "add" %></div>
+</div>
 <% end %>
-  </tr>
 
 
 <% @items.each do |item| %>
-  <tr>
-    <td><%= item.description %></td>
-    <td><%= item.code %></td>
-    <td><%= item.quantity %></td>
-    <td><%= item.quantity_per %></td>
-    <td><%= item.total %></td>
-    <td><%= item.tax_code %></td>
-  </tr>
+  <div class="row">
+    <div class="span1">nothing</div>
+    <div class="span1"><%= item.id %></div>
+    <div class="span2"><%= item.description %></div>
+    <div class="span1"><%= item.code %></div>
+    <div class="span1"><%= item.quantity %></div>
+    <div class="span1"><%= item.quantity_per %></div>
+    <div class="span1"><%= item.total %></div>
+    <div class="span1"><%= item.tax_code %></div>
+  </div>
 <% end %>

@@ -1,25 +1,20 @@
-<%= form_for(@receipt) do |f| %>
-  <% if @receipt.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@receipt.errors.count, "error") %> prohibited this receipt from being saved:</h2>
-
-      <ul>
-      <% @receipt.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @receipt, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :store, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :store, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :date, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.datetime_select :date, :class => 'datetime_select' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :store %><br />
-    <%= f.text_field :store %>
-  </div>
-  <div class="field">
-    <%= f.label :date %><br />
-    <%= f.datetime_select :date %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                receipts_path, :class => 'btn' %>
   </div>
 <% end %>
