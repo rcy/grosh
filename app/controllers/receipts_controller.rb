@@ -14,6 +14,7 @@ class ReceiptsController < ApplicationController
   # GET /receipts/1.json
   def show
     @receipt = Receipt.find(params[:id])
+    @items = @receipt.items
 
     respond_to do |format|
       format.html # show.html.erb
