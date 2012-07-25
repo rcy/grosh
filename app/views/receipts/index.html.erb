@@ -6,8 +6,8 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:store) %></th>
       <th><%= model_class.human_attribute_name(:date) %></th>
+      <th><%= model_class.human_attribute_name(:store) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -15,13 +15,13 @@
   <tbody>
     <% @receipts.each do |receipt| %>
       <tr>
-        <td><%= link_to receipt.id, receipt_path(receipt) %></td>
+        <td><%= receipt.id %></td>
+        <td><%= receipt.date.to_date %></td>
         <td><%= receipt.store %></td>
-        <td><%= receipt.date %></td>
         <td><%=l receipt.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_receipt_path(receipt), :class => 'btn btn-mini' %>
+                      receipt_path(receipt), :class => 'btn btn-mini' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       receipt_path(receipt),
                       :method => :delete,
