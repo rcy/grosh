@@ -1,29 +1,32 @@
   <tr>
+    <th>Description</th>
     <th>Code</th>
     <th>Quantity</th>
-    <th>Quantity per</th>
-    <th>Price</th>
-    <th>Price per</th>
-    <th>Description</th>
+    <th>Units</th>
     <th>Total</th>
     <th>Tax code</th>
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
+
+  <tr>
+<%= form_for(Item.new) do |f| %>
+    <td><%= f.text_field :description, :size => 8 %></td>
+    <td><%= f.text_field :code, :size => 8 %></td>
+    <td><%= f.text_field :quantity, :size => 8 %></td>
+    <td><%= f.text_field :quantity_per, :size => 8 %></td>
+    <td><%= f.text_field :total, :size => 8 %></td>
+    <td><%= f.text_field :tax_code, :size => 1 %></td>
+    <td><%= f.submit :value => "add" %></td>
+<% end %>
+  </tr>
+
 
 <% @items.each do |item| %>
   <tr>
+    <td><%= item.description %></td>
     <td><%= item.code %></td>
     <td><%= item.quantity %></td>
     <td><%= item.quantity_per %></td>
-    <td><%= item.price %></td>
-    <td><%= item.price_per %></td>
-    <td><%= item.description %></td>
     <td><%= item.total %></td>
     <td><%= item.tax_code %></td>
-    <td><%= link_to 'Show', item %></td>
-    <td><%= link_to 'Edit', edit_item_path(item) %></td>
-    <td><%= link_to 'Destroy', item, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>

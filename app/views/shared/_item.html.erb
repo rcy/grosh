@@ -1,0 +1,13 @@
+  <tr>
+    <td><%= item.description %></td>
+    <td><%= item.code %></td>
+    <td><%= item.quantity %></td>
+    <td><%= item.quantity_per %></td>
+    <td><%= item.price %></td>
+    <td><%= item.price_per %></td>
+    <td><%= item.total %></td>
+    <td><%= item.tax_code %></td>
+    <td><%= link_to 'Show', item %></td>
+    <td><%= link_to 'Edit', edit_item_path(item) %></td>
+    <td><%= link_to 'Destroy', item, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
