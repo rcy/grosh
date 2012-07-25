@@ -2,7 +2,7 @@ class ReceiptsController < ApplicationController
   # GET /receipts
   # GET /receipts.json
   def index
-    @receipts = Receipt.all
+    @receipts = Receipt.find(:all,:order => :date)
 
     respond_to do |format|
       format.html # index.html.erb

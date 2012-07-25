@@ -1,15 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Date:</b>
+<h1>
+  <b><%= @receipt.store %></b>
   <%= @receipt.date.to_date %>
-  <b>Store:</b>
-  <%= @receipt.store %>
-</p>
+</h1>
 
-<p>
+<table>
+  <tr>
+    <td></td>
+  </tr>
   <%= render :partial => 'shared/list' %>
-</p>
-
+</table>
 <%= link_to 'Edit', edit_receipt_path(@receipt) %> |
 <%= link_to 'Back', receipts_path %>
