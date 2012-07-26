@@ -1,3 +1,5 @@
+<h2>Items</h2>
+
 <div class="row-fluid">
   <div class="span2"><b>Description</b></div>
   <div class="span1"><b>Code</b></div>
@@ -8,17 +10,11 @@
   <div class="span1"><b>buttons</b></div>
 </div>
 
+<div class="itemlist">
 <% @items.each do |item| %>
-  <div class="row-fluid">
-    <div class="span2"><%= item.description %></div>
-    <div class="span1"><%= item.code %></div>
-    <div class="span1"><%= item.quantity %></div>
-    <div class="span1"><%= item.quantity_per %></div>
-    <div class="span1"><%= item.total %></div>
-    <div class="span1"><%= item.tax_code %></div>
-    <div class="span1"><button>edit</button></div>
-  </div>
+  <%= render :partial => 'shared/item', :locals => { :item => item } %>
 <% end %>
+</div>
 
 <%= form_for(Item.new, :html => {:class => 'form-inline'}, :remote => true) do |f| %>
 <%= f.hidden_field :receipt_id, :value => @receipt.id, :class => 'span12' %>
@@ -27,7 +23,7 @@
   <div class="span1"><%= f.text_field :code, :class => 'span12', :placeholder => 'code' %></div>
   <div class="span1"><%= f.text_field :quantity, :class => 'span12', :placeholder => 'quantity' %></div>
   <div class="span1"><%= f.text_field :quantity_per, :class => 'span12', :placeholder => 'units' %></div>
-  <div class="span1"><%= f.text_field :total, :class => 'span12', :placeholder => 'total $' %></div>
+  <div class="span1"><%= f.text_field :total, :class => 'span12', :placeholder => '$price' %></div>
   <div class="span1"><%= f.text_field :tax_code, :class => 'span12', :placeholder => 'taxcode' %></div>
   <div class="span1"><%= f.submit :value => "add" %></div>
 </div>

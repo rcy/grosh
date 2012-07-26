@@ -1,13 +1,9 @@
-  <tr>
-    <td><%= item.description %></td>
-    <td><%= item.code %></td>
-    <td><%= item.quantity %></td>
-    <td><%= item.quantity_per %></td>
-    <td><%= item.price %></td>
-    <td><%= item.price_per %></td>
-    <td><%= item.total %></td>
-    <td><%= item.tax_code %></td>
-    <td><%= link_to 'Show', item %></td>
-    <td><%= link_to 'Edit', edit_item_path(item) %></td>
-    <td><%= link_to 'Destroy', item, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+  <div class="row-fluid">
+    <div class="span2"><%= item.description %></div>
+    <div class="span1"><%= item.code %></div>
+    <div class="span1"><%= item.quantity %></div>
+    <div class="span1"><%= item.quantity_per %></div>
+    <div class="span1"><%= item.total %></div>
+    <div class="span1"><%= item.tax_code %></div>
+    <div class="span1"><button>edit</button></div>
+  </div>
