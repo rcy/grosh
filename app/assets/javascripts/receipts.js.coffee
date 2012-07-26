@@ -3,8 +3,6 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $ ->
-    $("input#item_description").focus()
-
     $("form")
       .bind "ajax:beforeSend", (event, data) ->
         console.log 'loading...'
