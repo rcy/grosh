@@ -6,7 +6,8 @@
   <div class="span1"><b>Quantity</b></div>
   <div class="span1"><b>Units</b></div>
   <div class="span1"><b>Total</b></div>
-  <div class="span1"><b>Tax code</b></div>
+  <div class="span1"><b>Tax Code</b></div>
+  <div class="span1"><b>Category</b></div>
   <div class="span1"><b>buttons</b></div>
 </div>
 
@@ -23,8 +24,9 @@
   <div class="span1"><%= f.text_field :code, :class => 'span12', :placeholder => 'code' %></div>
   <div class="span1"><%= f.text_field :quantity, :class => 'span12', :placeholder => 'quantity' %></div>
   <div class="span1"><%= f.text_field :quantity_per, :class => 'span12', :placeholder => 'units' %></div>
-  <div class="span1"><%= f.text_field :total, :class => 'span12', :placeholder => '$price' %></div>
+  <div class="span1"><%= f.text_field :total, :class => 'span12', :placeholder => 'cost' %></div>
   <div class="span1"><%= f.text_field :tax_code, :class => 'span12', :placeholder => 'taxcode' %></div>
+  <div class="span1"><%= f.text_field :category, :class => 'span12', :placeholder => 'category' %></div>
   <div class="span1"><%= f.submit :value => "add" %></div>
 </div>
 <% end %>
