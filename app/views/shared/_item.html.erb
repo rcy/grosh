@@ -1,4 +1,8 @@
   <div class="row-fluid">
+    <% unless receipt %>
+      <div class="span1"><%= item.receipt && item.receipt.store %></div>
+      <div class="span2"><%= item.receipt && item.receipt.date.to_date %></div>
+    <% end %>
     <div class="span2"><%= item.description %></div>
     <div class="span1"><%= item.code %></div>
     <div class="span1"><%= item.quantity %></div>
@@ -6,5 +10,11 @@
     <div class="span1"><%= item.total %></div>
     <div class="span1"><%= item.tax_code %></div>
     <div class="span1"><%= item.category %></div>
-    <div class="span1"><button>edit</button></div>
+    <div class="span1">
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      item_path(item),
+                      :method => :delete,
+                      :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+                      :class => 'btn btn-mini btn-danger' %>
+    </div>
   </div>

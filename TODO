@@ -1,5 +1,7 @@
 -*- outline -*-
 * import receipts
+create receipt on first item if it does not exist, by store and date
+if store and date are missing, use last store and date seen
 * edit items
 destroy
 * fix date selector on receipt creation
@@ -17,5 +19,4 @@ pie chart by type
 * show price
 * add tags
 * group reciept list by day/store
-* add item list
 * implement autofill

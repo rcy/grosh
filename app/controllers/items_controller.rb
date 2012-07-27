@@ -41,6 +41,7 @@ class ItemsController < ApplicationController
   # POST /items.json
   def create
     @item = Item.new(params[:item])
+    @receipt = @item.receipt
 
     respond_to do |format|
       if @item.save
