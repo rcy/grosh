@@ -1,0 +1,21 @@
+-*- outline -*-
+* import receipts
+* edit items
+destroy
+* fix date selector on receipt creation
+* add category
+* show total on receipt view
+* show total on list view
+* show grand total
+* reports
+per week
+per month
+per arbitrary period
+per item type
+per store
+pie chart by type
+* show price
+* add tags
+* group reciept list by day/store
+* add item list
+* implement autofill
