@@ -17,7 +17,7 @@
       <tr>
         <td><%= receipt.id %></td>
         <td><%= receipt.date.to_date %></td>
-        <td><%= receipt.store %></td>
+        <td><%= link_to receipt.store, receipt_path(receipt) %></td>
         <td><%=l receipt.created_at.to_date %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
