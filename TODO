@@ -5,9 +5,6 @@ if store and date are missing, use last store and date seen
 * edit items
 destroy
 * fix date selector on receipt creation
-* add category
-* show total on receipt view
-* show total on list view
 * show grand total
 * reports
 per week

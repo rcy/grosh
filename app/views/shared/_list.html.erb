@@ -10,7 +10,7 @@
   <div class="span1"><b>Total</b></div>
   <div class="span1"><b>Tax Code</b></div>
   <div class="span1"><b>Category</b></div>
-  <div class="span1"><b>buttons</b></div>
+  <div class="span1"></div>
 </div>
 
 <div class="itemlist">
@@ -30,7 +30,12 @@
     <div class="span1"><%= f.text_field :total, :class => 'span12', :placeholder => 'cost' %></div>
     <div class="span1"><%= f.text_field :tax_code, :class => 'span12', :placeholder => 'taxcode' %></div>
     <div class="span1"><%= f.text_field :category, :class => 'span12', :placeholder => 'category' %></div>
-    <div class="span1"><%= f.submit :value => "add" %></div>
+    <div class="span1"><%= f.submit :value => "add", :class => 'btn btn-primary' %></div>
   </div>
   <% end %>
+  <div class="row-fluid">
+    <div class="span2"><b>Sub total:</b></div>
+    <div class="span3"></div>
+    <div class="span1"><%= number_to_currency @receipt.total %></div>
+  </div>
 <% end %>

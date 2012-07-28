@@ -2,5 +2,11 @@
   <h1><%= @receipt.store %></h1>
   <h2><%= @receipt.date.to_date %></h2>
 
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+            receipt_path(@receipt),
+            :method => :delete,
+            :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+            :class => 'btn btn-mini btn-danger' %>
+
 <hr>
 <%= render :partial => 'shared/list', :local => {:items => @receipt.items } %>

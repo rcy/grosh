@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120727021428) do
+ActiveRecord::Schema.define(:version => 20120727232324) do
 
   create_table "items", :force => true do |t|
     t.string   "store"
@@ -22,10 +22,10 @@ ActiveRecord::Schema.define(:version => 20120727021428) do
     t.decimal  "price"
     t.string   "price_per"
     t.string   "description"
-    t.decimal  "total"
+    t.decimal  "total",        :default => 0.0
     t.string   "tax_code"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
     t.integer  "receipt_id"
     t.string   "category"
   end
