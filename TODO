@@ -1,4 +1,6 @@
 -*- outline -*-
+* remove unused columns
+rename quantity_per to units
 * edit items
 destroy
 * fix date selector on receipt creation
