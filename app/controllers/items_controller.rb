@@ -1,3 +1,5 @@
+require 'csv'
+
 class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
@@ -83,4 +85,26 @@ class ItemsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def import
+    if request.post?
+      tmp = params[:file_upload][:my_file].tempfile
+
+      @receipt = nil
+
+      CSV.foreach(tmp.path, :headers => true) do |row|
+        attrs = row.to_hash
+        puts attrs
+        if attrs['store']
+          @receipt = Receipt.create! :store => attrs['store'], :date => attrs['date']
+        end
+        attrs.delete 'store'
+        attrs.delete 'date'
+        @receipt.items << Item.new(attrs)
+      end
+
+      redirect_to @receipt
+    end
+  end
+
 end

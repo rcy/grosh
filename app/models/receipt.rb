@@ -1,4 +1,6 @@
 class Receipt < ActiveRecord::Base
+  validates_presence_of :date
+
   has_many :items, :dependent => :destroy
 
   def total

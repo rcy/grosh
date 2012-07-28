@@ -1,4 +1,6 @@
 Grosh::Application.routes.draw do
+  match 'import' => 'items#import'
+
   resources :receipts
 
   resources :items
