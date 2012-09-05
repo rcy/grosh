@@ -3,6 +3,7 @@ class ReceiptsController < ApplicationController
   # GET /receipts.json
   def index
     @receipts = Receipt.find(:all,:order => :date)
+    @total = @receipts.reduce(0) {|sum, r| sum + r.total }
 
     respond_to do |format|
       format.html # index.html.erb
