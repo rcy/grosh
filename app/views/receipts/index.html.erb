@@ -2,7 +2,13 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
 </div>
-total spent to date: <%= number_to_currency @total %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_receipt_path,
+            :class => 'btn btn-primary' %>
+
+
+<div class="pull-right">total spent to date: <%= number_to_currency @total %></div>
+
 <table class="table table-striped">
   <thead>
     <tr>
@@ -27,7 +33,3 @@ total spent to date: <%= number_to_currency @total %>
     <% end %>
   </tbody>
 </table>
-
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_receipt_path,
-            :class => 'btn btn-primary' %>
