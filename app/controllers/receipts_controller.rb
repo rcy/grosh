@@ -16,6 +16,7 @@ class ReceiptsController < ApplicationController
   def show
     @receipt = Receipt.find(params[:id])
     @items = @receipt.items
+    @categories = ['misc', 'beverages', 'carbs', 'condiments', 'household', 'produce', 'protein']
 
     respond_to do |format|
       format.html # show.html.erb

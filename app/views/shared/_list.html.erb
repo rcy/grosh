@@ -29,7 +29,9 @@
     <div class="span1"><%= f.text_field :units, :class => 'span12', :placeholder => 'units' %></div>
     <div class="span1"><%= f.text_field :total, :class => 'span12', :placeholder => 'cost' %></div>
     <div class="span1"><%= f.text_field :tax_code, :class => 'span12', :placeholder => 'taxcode' %></div>
-    <div class="span1"><%= f.text_field :category, :class => 'span12', :placeholder => 'category' %></div>
+    <div class="span1">
+      <%= f.select :category, @categories, {}, {:class => 'span12'} %>
+    </div>
     <div class="span1"><%= f.submit :value => "add", :class => 'btn btn-primary' %></div>
   </div>
   <% end %>
